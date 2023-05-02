@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Tag Wise Posts {% endblock title %}
+
+{% block content %}
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="all-blog-posts">
+              <div class="row">
+                {% for blog in blogs %}
+                {% include 'card.html' %}
+                {% endfor %}
+                {% include 'pagination.html' %}
+              </div>
+            </div>
+          </div>
+          {% include 'slidebar.html' %}
+        </div>
+      </div>
+    </section>
+
+    
+{% endblock content %}
